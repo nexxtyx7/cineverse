@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CineVerse — Cinema 3D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand">CINE<span>VERSE</span></div>
+    <nav>
+      <button data-view="home">Início</button>
+      <button data-view="catalog">Catálogo</button>
+      <button data-view="cinema">Cinema 3D</button>
+    </nav>
+    <input id="search" placeholder="Pesquisar filmes e séries..." aria-label="Pesquisar">
+  </header>
+
+  <main>
+    <section id="home" class="view active">
+      <div class="hero">
+        <div>
+          <p class="eyebrow">SEU CINEMA VIRTUAL</p>
+          <h1>Entre. Escolha.<br><span>Assista.</span></h1>
+          <p class="muted">Explore o cinema em 3D, escolha uma sala e sente-se para assistir.</p>
+          <button class="primary" data-view="cinema">Entrar no cinema 3D</button>
+        </div>
+        <div class="hero-screen"><div class="screen-glow">CINEVERSE</div></div>
+      </div>
+      <h2>Em destaque</h2>
+      <div id="featured" class="grid"></div>
+    </section>
+
+    <section id="catalog" class="view">
+      <div class="section-head"><div><p class="eyebrow">CATÁLOGO</p><h1>Filmes e séries</h1></div></div>
+      <div id="catalogGrid" class="grid"></div>
+    </section>
+
+    <section id="cinema" class="view">
+      <div class="cinema-wrap">
+        <div class="cinema-info">
+          <p class="eyebrow">MODO CINEMA 3D</p>
+          <h1>Escolha seu lugar</h1>
+          <p class="muted">Use WASD ou as setas para andar. No celular, use os controles abaixo.</p>
+          <div id="selectedMovie">Nenhum título selecionado.</div>
+        </div>
+        <div class="theater" id="theater">
+          <div class="ceiling">CINEVERSE CINEMA</div>
+          <div class="screen3d" id="screen3d"><span>TELA</span></div>
+          <div class="aisle"></div>
+          <div id="seats" class="seats"></div>
+          <div id="avatar" class="avatar" title="Seu personagem">●</div>
+          <div class="controls">
+            <button data-move="up">▲</button>
+            <div><button data-move="left">◀</button><button data-move="down">▼</button><button data-move="right">▶</button></div>
+          </div>
+          <div class="exit">SAÍDA</div>
+        </div>
+        <div class="player-panel">
+          <h2>Player</h2>
+          <video id="player" controls playsinline></video>
+          <p class="muted small">Coloque seus vídeos autorizados na pasta <code>movies/</code> e configure o caminho em <code>script.js</code>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
